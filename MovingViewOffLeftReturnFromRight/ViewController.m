@@ -31,11 +31,11 @@
     //first number is x starting points, can use this to set the distance between the views
     //second number is y location, so how high or low on the screen.
     //Last two values are the rectangles size.
-    view1 = [[UIView alloc] initWithFrame:CGRectMake(360.0, 100.0, 5.0, 10.0)];
+    view1 = [[UIView alloc] initWithFrame:CGRectMake(355.0, 100.0, 5.0, 10.0)];
     [view1 setBackgroundColor:[UIColor redColor]];
     [self.view addSubview:view1];
     
-    view2 = [[UIView alloc] initWithFrame:CGRectMake(100.0, 100.0, 5.0, 10.0)];
+    view2 = [[UIView alloc] initWithFrame:CGRectMake(120.0, 100.0, 5.0, 10.0)];
     [view2 setBackgroundColor:[UIColor blueColor]];
     [self.view addSubview:view2];
 
@@ -44,9 +44,9 @@
 }
 
 -(void)platformMovement{
-    view1.center = CGPointMake(view1.center.x + viewsMovement, view1.center.y);
+    view1.center = CGPointMake(view1.center.x - viewsMovement, view1.center.y);
     
-    view2.center = CGPointMake(view2.center.x + viewsMovement, view1.center.y);
+    view2.center = CGPointMake(view2.center.x - viewsMovement, view1.center.y);
     
 }
 
