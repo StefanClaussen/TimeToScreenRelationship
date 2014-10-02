@@ -11,9 +11,9 @@
 @interface ViewController ()
 {
     NSTimer *movement;
-    NSInteger cloudsMovement;
-    UIView *clouds1;
-    UIView *clouds2;
+    NSInteger viewsMovement;
+    UIView *view1;
+    UIView *view2;
 }
 
 @end
@@ -27,32 +27,37 @@
     
     movement = [NSTimer scheduledTimerWithTimeInterval:0.05 target:self selector:@selector(moving) userInfo:nil repeats:YES];
     
-    clouds1 = [[UIView alloc] initWithFrame:CGRectMake(10.0, 20.0, 5.0, 10.0)];
-    [clouds1 setBackgroundColor:[UIColor redColor]];
-    [self.view addSubview:clouds1];
+    //In CGRectMake
+    //first number is x starting points, can use this to set the distance between the views
+    //second number is y location, so how high or low on the screen.
+    //Last two values are the rectangles size.
+    view1 = [[UIView alloc] initWithFrame:CGRectMake(360.0, 100.0, 5.0, 10.0)];
+    [view1 setBackgroundColor:[UIColor redColor]];
+    [self.view addSubview:view1];
     
-    clouds2 = [[UIView alloc] initWithFrame:CGRectMake(40.0, 100.0, 5.0, 10.0)];
-    [clouds2 setBackgroundColor:[UIColor blueColor]];
-    [self.view addSubview:clouds2];
+    view2 = [[UIView alloc] initWithFrame:CGRectMake(100.0, 100.0, 5.0, 10.0)];
+    [view2 setBackgroundColor:[UIColor blueColor]];
+    [self.view addSubview:view2];
 
-    cloudsMovement = 2;
+    //Use this variable to set the speed.  If O, does not move.
+    viewsMovement = 2;
 }
 
 -(void)platformMovement{
-    clouds1.center = CGPointMake(clouds1.center.x + cloudsMovement, clouds1.center.y);
+    view1.center = CGPointMake(view1.center.x + viewsMovement, view1.center.y);
     
-    clouds2.center = CGPointMake(clouds2.center.x + cloudsMovement, clouds1.center.y);
+    view2.center = CGPointMake(view2.center.x + viewsMovement, view1.center.y);
     
 }
 
 -(void)moving{
     
-    if (clouds1.center.x > 470){
-        clouds1.center = CGPointMake(-150, clouds1.center.y);
+    if (view1.center.x > 360){
+        view1.center = CGPointMake(-150, view1.center.y);
     }
     
-    if (clouds2.center.x > 470){
-        clouds2.center = CGPointMake(-150, clouds2.center.y);
+    if (view2.center.x > 360){
+        view2.center = CGPointMake(-150, view2.center.y);
     }
     
     [self platformMovement];
