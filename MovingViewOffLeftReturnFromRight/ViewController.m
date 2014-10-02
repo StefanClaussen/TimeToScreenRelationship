@@ -1,10 +1,10 @@
 //
 //  ViewController.m
 //  MovingViewOffLeftReturnFromRight
-//
-//  Created by Stefan Claussen on 02/10/2014.
-//  Copyright (c) 2014 One foot after the other. All rights reserved.
-//
+
+//  Spacing between views is not always equal.
+//  Have added space when off the screen.
+//  Need to figure out the maths.
 
 #import "ViewController.h"
 
@@ -31,11 +31,11 @@
     //first number is x starting points, can use this to set the distance between the views
     //second number is y location, so how high or low on the screen.
     //Last two values are the rectangles size.
-    view1 = [[UIView alloc] initWithFrame:CGRectMake(355.0, 100.0, 5.0, 10.0)];
+    view1 = [[UIView alloc] initWithFrame:CGRectMake(315.0, 100.0, 5.0, 10.0)];
     [view1 setBackgroundColor:[UIColor redColor]];
     [self.view addSubview:view1];
     
-    view2 = [[UIView alloc] initWithFrame:CGRectMake(120.0, 100.0, 5.0, 10.0)];
+    view2 = [[UIView alloc] initWithFrame:CGRectMake(100.0, 100.0, 5.0, 10.0)];
     [view2 setBackgroundColor:[UIColor blueColor]];
     [self.view addSubview:view2];
 
@@ -52,16 +52,15 @@
 
 -(void)moving{
     
-    if (view1.center.x > 360){
-        view1.center = CGPointMake(-150, view1.center.y);
+    if (view1.center.x < -200){
+        view1.center = CGPointMake(+320, view1.center.y);
     }
     
-    if (view2.center.x > 360){
-        view2.center = CGPointMake(-150, view2.center.y);
+    if (view2.center.x < -200){
+        view2.center = CGPointMake(+320, view2.center.y);
     }
     
     [self platformMovement];
-    
 }
 
 @end
