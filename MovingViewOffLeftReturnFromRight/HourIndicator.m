@@ -8,6 +8,12 @@
 
 #import "HourIndicator.h"
 
+@interface HourIndicator ()
+
+@property (strong, nonatomic)NSString *hourString;
+
+@end
+
 @implementation HourIndicator
 
 // Only override drawRect: if you perform custom drawing.
@@ -24,6 +30,11 @@
     [horizontalLine addLineToPoint:endOfHorizontalLine];
     [horizontalLine stroke];
 }
+
+//- (void)setHourString
+//{
+//    self.hourString = [NSString stringWithFormat:@"2pm"];
+//}
 
 
 @end

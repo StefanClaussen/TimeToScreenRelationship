@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "HourIndicator.h"
 
 @interface ViewController : UIViewController
 
