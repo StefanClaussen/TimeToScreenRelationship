@@ -33,6 +33,7 @@
     
     movement = [NSTimer scheduledTimerWithTimeInterval:0.05 target:self selector:@selector(moving) userInfo:nil repeats:YES];
     
+    // strings are static.  The string should be created in HourIndicator class.
     self.hourLabel1.text = [NSString stringWithFormat:@"2pm"];
     self.hourLabel2.text = [NSString stringWithFormat:@"3pm"];
     
