@@ -11,7 +11,7 @@
 @interface ViewController ()
 {
     NSTimer *movement;
-    NSInteger viewsMovement;
+    double viewsMovement;
 }
 
 @property (strong, nonatomic)HourIndicator *hour1;
@@ -31,7 +31,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    movement = [NSTimer scheduledTimerWithTimeInterval:0.05 target:self selector:@selector(moving) userInfo:nil repeats:YES];
+    movement = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(moving) userInfo:nil repeats:YES];
     
     // strings are static.  The string should be created in HourIndicator class.
     self.hourLabel1.text = [NSString stringWithFormat:@"2pm"];
@@ -50,12 +50,14 @@
     [self.view addSubview:self.hour2];
 
     //Use this variable to set the speed.  If O, does not move.
-    viewsMovement = 2;
+    viewsMovement = 0.5;
 }
 
 -(void)platformMovement
 {
     self.hour1.center = CGPointMake(self.hour1.center.x - viewsMovement, self.hour1.center.y);
+    NSLog(@"self.hour1.center.x - viewsMovement = %f", self.hour1.center.x - viewsMovement);
+    
     self.hourLabel1.center = CGPointMake(self.hourLabel1.center.x - viewsMovement, self.hourLabel1.center.y);
     
     self.hour2.center = CGPointMake(self.hour2.center.x - viewsMovement, self.hour1.center.y);
