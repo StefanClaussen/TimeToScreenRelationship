@@ -6,15 +6,15 @@
 //  Copyright (c) 2014 One foot after the other. All rights reserved.
 //
 
-#import "HourIndicator.h"
+#import "HourMarker.h"
 
-@interface HourIndicator ()
+@interface HourMarker ()
 
 @property (strong, nonatomic)NSString *hourString;
 
 @end
 
-@implementation HourIndicator
+@implementation HourMarker
 
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.

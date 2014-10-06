@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface HourIndicator : UIView
+@interface HourMarker : UIView
 
 @end

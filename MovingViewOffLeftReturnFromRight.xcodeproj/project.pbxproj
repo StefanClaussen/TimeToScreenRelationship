@@ -14,7 +14,7 @@
 		F8841E3019DD531E00C2AD7A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8841E2F19DD531E00C2AD7A /* Images.xcassets */; };
 		F8841E3319DD531E00C2AD7A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8841E3119DD531E00C2AD7A /* LaunchScreen.xib */; };
 		F8841E3F19DD531E00C2AD7A /* MovingViewOffLeftReturnFromRightTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F8841E3E19DD531E00C2AD7A /* MovingViewOffLeftReturnFromRightTests.m */; };
-		F8841E4A19DD884700C2AD7A /* HourIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = F8841E4919DD884700C2AD7A /* HourIndicator.m */; };
+		F8841E4A19DD884700C2AD7A /* HourMarker.m in Sources */ = {isa = PBXBuildFile; fileRef = F8841E4919DD884700C2AD7A /* HourMarker.m */; };
 		F8F4AAEE19E29C2500715A80 /* play 2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F8F4AAEC19E29C2500715A80 /* play 2@2x.png */; };
 		F8F4AAEF19E29C2500715A80 /* Stop 2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F8F4AAED19E29C2500715A80 /* Stop 2@2x.png */; };
 /* End PBXBuildFile section */
@@ -43,8 +43,8 @@
 		F8841E3819DD531E00C2AD7A /* MovingViewOffLeftReturnFromRightTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MovingViewOffLeftReturnFromRightTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8841E3D19DD531E00C2AD7A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F8841E3E19DD531E00C2AD7A /* MovingViewOffLeftReturnFromRightTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MovingViewOffLeftReturnFromRightTests.m; sourceTree = "<group>"; };
-		F8841E4819DD884700C2AD7A /* HourIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HourIndicator.h; sourceTree = "<group>"; };
-		F8841E4919DD884700C2AD7A /* HourIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HourIndicator.m; sourceTree = "<group>"; };
+		F8841E4819DD884700C2AD7A /* HourMarker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HourMarker.h; sourceTree = "<group>"; };
+		F8841E4919DD884700C2AD7A /* HourMarker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HourMarker.m; sourceTree = "<group>"; };
 		F8F4AAEC19E29C2500715A80 /* play 2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "play 2@2x.png"; sourceTree = "<group>"; };
 		F8F4AAED19E29C2500715A80 /* Stop 2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Stop 2@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -92,8 +92,8 @@
 				F8841E2719DD531E00C2AD7A /* AppDelegate.m */,
 				F8841E2919DD531E00C2AD7A /* ViewController.h */,
 				F8841E2A19DD531E00C2AD7A /* ViewController.m */,
-				F8841E4819DD884700C2AD7A /* HourIndicator.h */,
-				F8841E4919DD884700C2AD7A /* HourIndicator.m */,
+				F8841E4819DD884700C2AD7A /* HourMarker.h */,
+				F8841E4919DD884700C2AD7A /* HourMarker.m */,
 				F8841E2C19DD531E00C2AD7A /* Main.storyboard */,
 				F8841E2F19DD531E00C2AD7A /* Images.xcassets */,
 				F8841E3119DD531E00C2AD7A /* LaunchScreen.xib */,
@@ -233,7 +233,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F8841E2B19DD531E00C2AD7A /* ViewController.m in Sources */,
-				F8841E4A19DD884700C2AD7A /* HourIndicator.m in Sources */,
+				F8841E4A19DD884700C2AD7A /* HourMarker.m in Sources */,
 				F8841E2819DD531E00C2AD7A /* AppDelegate.m in Sources */,
 				F8841E2519DD531E00C2AD7A /* main.m in Sources */,
 			);

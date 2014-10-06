@@ -51,8 +51,8 @@
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
-                        <outlet property="hourLabel1" destination="pZe-Q9-eQN" id="CO4-bY-y6E"/>
-                        <outlet property="hourLabel2" destination="BBp-6q-Sr1" id="wp6-nt-aw2"/>
+                        <outlet property="hourMarkerLabel1" destination="pZe-Q9-eQN" id="jHg-p6-VC2"/>
+                        <outlet property="hourMarkerLabel2" destination="BBp-6q-Sr1" id="d8b-96-hpK"/>
                         <outlet property="playPauseButton" destination="Jph-kK-1hk" id="0Dz-XD-B0J"/>
                         <outlet property="stopButton" destination="phl-uE-Xb0" id="fD2-Xe-wF9"/>
                         <outlet property="todaysDateLabel" destination="VuX-sV-Q0N" id="pg2-LM-t7j"/>
