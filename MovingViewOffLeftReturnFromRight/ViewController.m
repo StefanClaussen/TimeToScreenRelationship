@@ -80,9 +80,7 @@
 }
 
 - (void)moving
-{
-    NSLog(@"self.hour2.center.x is  now %f", self.hour2.center.x);
-    
+{    
     // reset hour indicators to right hand edge of screen
     
     if (fabsf(self.hour1.center.x) < fabsf(0.18 * mainViewWidth) && self.hour2.center.x < 0)
@@ -93,7 +91,6 @@
     
     if (fabsf(self.hour2.center.x) < fabsf(0.18 * mainViewWidth) && self.hour1.center.x < 0)
     {
-        NSLog(@"reset hour marker 1");
         self.hour1.center = CGPointMake(mainViewWidth, self.hour1.center.y);
         self.hourLabel1.center = CGPointMake(mainViewWidth, self.hourLabel1.center.y);
     }
