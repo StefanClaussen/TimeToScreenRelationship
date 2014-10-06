@@ -18,8 +18,8 @@
     CGFloat screenWidth;
 }
 
-@property (strong, nonatomic)HourMarker *hourMarkerLine1;
-@property (strong, nonatomic)HourMarker *hourMarkerLine2;
+@property (strong, nonatomic) HourMarkerView *hourMarkerLine1;
+@property (strong, nonatomic) HourMarkerView *hourMarkerLine2;
 @property (strong, nonatomic) IBOutlet UILabel *hourMarkerLabel1;
 @property (strong, nonatomic) IBOutlet UILabel *hourMarkerLabel2;
 
@@ -41,22 +41,22 @@
     
     timerForTimeline = [NSTimer scheduledTimerWithTimeInterval:0.05 target:self selector:@selector(updateTimelineOnTimer) userInfo:nil repeats:YES];
     
-    // strings are static.  The string should be created in HourIndicator class.
-    self.hourMarkerLabel1.text = [NSString stringWithFormat:@"2pm"];
-    self.hourMarkerLabel2.text = [NSString stringWithFormat:@"3pm"];
-    
     //In CGRectMake
     //first number is x starting points, can use this to set the distance between the views
     //second number is y location, so how high or low on the screen.
     //Last two values are the rectangles size.
-    self.hourMarkerLine1 = [[HourMarker alloc] initWithFrame:CGRectMake(315.0f, 92.0f, 2.0f, 10.0f)];
+    self.hourMarkerLine1 = [[HourMarkerView alloc] initWithFrame:CGRectMake(315.0f, 92.0f, 2.0f, 10.0f)];
     [self.hourMarkerLine1 setBackgroundColor:[UIColor clearColor]];
     [self.view addSubview:self.hourMarkerLine1];
     
-    self.hourMarkerLine2 = [[HourMarker alloc] initWithFrame:CGRectMake(75.0f, 92.0f, 2.0f, 10.0f)];
+    self.hourMarkerLine2 = [[HourMarkerView alloc] initWithFrame:CGRectMake(75.0f, 92.0f, 2.0f, 10.0f)];
     [self.hourMarkerLine2 setBackgroundColor:[UIColor clearColor]];
     [self.view addSubview:self.hourMarkerLine2];
 
+    // strings are static.  The string should be created in HourIndicator class.
+    self.hourMarkerLabel1.text = self.hourMarkerLine1.hourString;
+    self.hourMarkerLabel2.text = [NSString stringWithFormat:@"3pm"];
+    
     //Use this variable to set the speed.  If O, does not move.
     hourMarkerDistanceToMoveOnXAxis = 2.0;
     
@@ -81,6 +81,9 @@
 - (void)checkIfHourMarkerShouldBeResetToRightSide
 {
     // reset hour indicators to right hand edge of screen
+    // the distance between the stop and play/pause buttons is 82% of the screen width
+    //                       stop button |                    | play/pause button
+    // left edge of screen | <-- 18% --> | <----- 82% ------> | right edge of screen
     
     if (fabsf(self.hourMarkerLine1.center.x) < fabsf(0.18 * screenWidth) && self.hourMarkerLine2.center.x < 0)
     {

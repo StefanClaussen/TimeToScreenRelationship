@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface HourMarker : UIView
+@interface HourMarkerView : UIView
+
+@property (strong, nonatomic)NSString *hourString;
 
 @end
