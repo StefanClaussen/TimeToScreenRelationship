@@ -15,6 +15,8 @@
 		F8841E3319DD531E00C2AD7A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8841E3119DD531E00C2AD7A /* LaunchScreen.xib */; };
 		F8841E3F19DD531E00C2AD7A /* MovingViewOffLeftReturnFromRightTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F8841E3E19DD531E00C2AD7A /* MovingViewOffLeftReturnFromRightTests.m */; };
 		F8841E4A19DD884700C2AD7A /* HourIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = F8841E4919DD884700C2AD7A /* HourIndicator.m */; };
+		F8F4AAEE19E29C2500715A80 /* play 2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F8F4AAEC19E29C2500715A80 /* play 2@2x.png */; };
+		F8F4AAEF19E29C2500715A80 /* Stop 2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F8F4AAED19E29C2500715A80 /* Stop 2@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +45,8 @@
 		F8841E3E19DD531E00C2AD7A /* MovingViewOffLeftReturnFromRightTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MovingViewOffLeftReturnFromRightTests.m; sourceTree = "<group>"; };
 		F8841E4819DD884700C2AD7A /* HourIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HourIndicator.h; sourceTree = "<group>"; };
 		F8841E4919DD884700C2AD7A /* HourIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HourIndicator.m; sourceTree = "<group>"; };
+		F8F4AAEC19E29C2500715A80 /* play 2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "play 2@2x.png"; sourceTree = "<group>"; };
+		F8F4AAED19E29C2500715A80 /* Stop 2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Stop 2@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +105,8 @@
 		F8841E2219DD531E00C2AD7A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				F8F4AAEC19E29C2500715A80 /* play 2@2x.png */,
+				F8F4AAED19E29C2500715A80 /* Stop 2@2x.png */,
 				F8841E2319DD531E00C2AD7A /* Info.plist */,
 				F8841E2419DD531E00C2AD7A /* main.m */,
 			);
@@ -206,6 +212,8 @@
 			files = (
 				F8841E2E19DD531E00C2AD7A /* Main.storyboard in Resources */,
 				F8841E3319DD531E00C2AD7A /* LaunchScreen.xib in Resources */,
+				F8F4AAEE19E29C2500715A80 /* play 2@2x.png in Resources */,
+				F8F4AAEF19E29C2500715A80 /* Stop 2@2x.png in Resources */,
 				F8841E3019DD531E00C2AD7A /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

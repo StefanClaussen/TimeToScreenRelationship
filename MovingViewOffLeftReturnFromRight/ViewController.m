@@ -19,6 +19,9 @@
 @property (strong, nonatomic) IBOutlet UILabel *hourLabel1;
 @property (strong, nonatomic) IBOutlet UILabel *hourLabel2;
 
+@property (strong, nonatomic) IBOutlet UIButton *stopButton;
+@property (strong, nonatomic) IBOutlet UIButton *playPauseButton;
+@property (strong, nonatomic) IBOutlet UILabel *todaysDateLabel;
 
 @end
 
@@ -50,13 +53,21 @@
     [self.view addSubview:self.hour2];
 
     //Use this variable to set the speed.  If O, does not move.
-    viewsMovement = 0.5;
+    viewsMovement = 2.0;
+    
+    // buttons
+    [self.playPauseButton setImage:[UIImage imageNamed:@"play 2"] forState:UIControlStateNormal];
+    [self.stopButton setImage:[UIImage imageNamed:@"Stop 2"] forState:UIControlStateNormal];
+    
+    // Logging centres
+    [self logStopButtonCentre];
+    [self logPlayPauseButtonCentre];
+
 }
 
 -(void)platformMovement
 {
     self.hour1.center = CGPointMake(self.hour1.center.x - viewsMovement, self.hour1.center.y);
-    NSLog(@"self.hour1.center.x - viewsMovement = %f", self.hour1.center.x - viewsMovement);
     
     self.hourLabel1.center = CGPointMake(self.hourLabel1.center.x - viewsMovement, self.hourLabel1.center.y);
     
@@ -83,6 +94,20 @@
     }
     
     [self platformMovement];
+}
+
+# pragma mark - Finding centre of the stop and play/pause button
+
+- (void)logStopButtonCentre
+{
+    double stopCentreLocation = self.stopButton.center.x;
+    NSLog(@"Stop button centre is %f", stopCentreLocation);
+}
+
+- (void)logPlayPauseButtonCentre
+{
+    double playPauseCentreLocation = self.playPauseButton.center.x;
+    NSLog(@"Play/pause button centre is %f", playPauseCentreLocation);
 }
 
 @end
