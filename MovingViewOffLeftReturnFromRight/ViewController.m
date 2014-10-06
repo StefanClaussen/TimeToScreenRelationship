@@ -6,6 +6,8 @@
 //  Have added space when off the screen.
 //  Need to figure out the maths.
 
+// 82% of screen width is equal to 1 hour of time.
+
 #import "ViewController.h"
 
 @interface ViewController ()
@@ -14,6 +16,7 @@
     double viewsMovement;
     double distanceBetweenStopAndPlayPauseButtons;
     double distanceBetweenHours;
+    CGFloat mainViewWidth;
 }
 
 @property (strong, nonatomic)HourIndicator *hour1;
@@ -37,7 +40,7 @@
         
     // Do any additional setup after loading the view, typically from a nib.
     
-    movement = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(moving) userInfo:nil repeats:YES];
+    movement = [NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(moving) userInfo:nil repeats:YES];
     
     // strings are static.  The string should be created in HourIndicator class.
     self.hourLabel1.text = [NSString stringWithFormat:@"2pm"];
@@ -56,11 +59,18 @@
     [self.view addSubview:self.hour2];
 
     //Use this variable to set the speed.  If O, does not move.
-    viewsMovement = 2.0;
+    viewsMovement = 10.0;
     
     // buttons
     [self.playPauseButton setImage:[UIImage imageNamed:@"play 2"] forState:UIControlStateNormal];
     [self.stopButton setImage:[UIImage imageNamed:@"Stop 2"] forState:UIControlStateNormal];
+    
+    // get the width of the screen
+    mainViewWidth = self.view.bounds.size.width;
+    
+    // get distance between stop and play/pause buttons
+    // this will be used to position the hour indicators
+    distanceBetweenStopAndPlayPauseButtons = self.playPauseButton.center.x - self.stopButton.center.x;
     
     // Logging centres
     [self logStopButtonCentre];
@@ -82,26 +92,44 @@
     self.hourLabel2.center = CGPointMake(hourLabel2DynamicXPosition - viewsMovement, self.hourLabel2.center.y);
 }
 
--(void)moving{
+- (void)moving
+{
+    NSLog(@"self.hour2.center.x is  now %f", self.hour2.center.x);
     
-    if (self.hour1.center.x < -200){
-        self.hour1.center = CGPointMake(+320, self.hour1.center.y);
+    if (fabsf(self.hour1.center.x) < fabsf(0.18 * mainViewWidth))
+    {
+        self.hour2.center = CGPointMake(mainViewWidth, self.hour2.center.y);
+        self.hourLabel2.center = CGPointMake(mainViewWidth, self.hourLabel2.center.y);
     }
-    
-    if (self.hourLabel1.center.x < -200) {
-        self.hourLabel1.center = CGPointMake(+320, self.hourLabel1.center.y);
+    if (fabsf(self.hour2.center.x) < fabsf(0.18 * mainViewWidth))
+    {
+        NSLog(@"reset hour marker 1");
+        self.hour1.center = CGPointMake(mainViewWidth, self.hour1.center.y);
+        self.hourLabel1.center = CGPointMake(mainViewWidth, self.hourLabel1.center.y);
     }
-    
-    if (self.hour2.center.x < -200){
-        self.hour2.center = CGPointMake(+320, self.hour2.center.y);
-    }
-    
-    if (self.hourLabel2.center.x < -200) {
-        self.hourLabel2.center = CGPointMake(+320, self.hourLabel2.center.y);
-    }
-    
     [self platformMovement];
 }
+
+//-(void)moving{
+//    
+//    if (self.hour1.center.x < -200){
+//        self.hour1.center = CGPointMake(+320, self.hour1.center.y);
+//    }
+//    
+//    if (self.hourLabel1.center.x < -200) {
+//        self.hourLabel1.center = CGPointMake(+320, self.hourLabel1.center.y);
+//    }
+//    
+//    if (self.hour2.center.x < -200){
+//        self.hour2.center = CGPointMake(+320, self.hour2.center.y);
+//    }
+//    
+//    if (self.hourLabel2.center.x < -200) {
+//        self.hourLabel2.center = CGPointMake(+320, self.hourLabel2.center.y);
+//    }
+//    
+//    [self platformMovement];
+//}
 
 # pragma mark - Finding centre of the stop and play/pause button
 
