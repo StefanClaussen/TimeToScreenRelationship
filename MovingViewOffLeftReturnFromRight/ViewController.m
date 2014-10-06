@@ -12,6 +12,8 @@
 {
     NSTimer *movement;
     double viewsMovement;
+    double distanceBetweenStopAndPlayPauseButtons;
+    double distanceBetweenHours;
 }
 
 @property (strong, nonatomic)HourIndicator *hour1;
@@ -32,6 +34,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+        
     // Do any additional setup after loading the view, typically from a nib.
     
     movement = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(moving) userInfo:nil repeats:YES];
@@ -62,17 +65,21 @@
     // Logging centres
     [self logStopButtonCentre];
     [self logPlayPauseButtonCentre];
+    [self logDistanceBetweenStopAndPlayPauseButtons];
 
 }
 
 -(void)platformMovement
 {
-    self.hour1.center = CGPointMake(self.hour1.center.x - viewsMovement, self.hour1.center.y);
     
     self.hourLabel1.center = CGPointMake(self.hourLabel1.center.x - viewsMovement, self.hourLabel1.center.y);
+    self.hour1.center = CGPointMake(self.hourLabel1.center.x - viewsMovement, self.hour1.center.y);
+
     
-    self.hour2.center = CGPointMake(self.hour2.center.x - viewsMovement, self.hour1.center.y);
-    self.hourLabel2.center = CGPointMake(self.hourLabel2.center.x - viewsMovement, self.hourLabel2.center.y);
+    double hourLabel2DynamicXPosition = self.hourLabel1.center.x + distanceBetweenStopAndPlayPauseButtons;
+    
+    self.hour2.center = CGPointMake(hourLabel2DynamicXPosition - viewsMovement, self.hour1.center.y);
+    self.hourLabel2.center = CGPointMake(hourLabel2DynamicXPosition - viewsMovement, self.hourLabel2.center.y);
 }
 
 -(void)moving{
@@ -110,4 +117,13 @@
     NSLog(@"Play/pause button centre is %f", playPauseCentreLocation);
 }
 
+- (void)logDistanceBetweenStopAndPlayPauseButtons
+{
+    distanceBetweenStopAndPlayPauseButtons = self.playPauseButton.center.x - self.stopButton.center.x;
+    NSLog(@"Distance between stop and play/pause buttons is %f", distanceBetweenStopAndPlayPauseButtons);
+}
+
 @end
+
+
+
