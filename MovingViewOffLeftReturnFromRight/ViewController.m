@@ -46,11 +46,11 @@
     //second number is y location, so how high or low on the screen.
     //Last two values are the rectangles size.
     self.hourMarkerLine1 = [[HourMarkerView alloc] initWithFrame:CGRectMake(315.0f, 92.0f, 2.0f, 10.0f)];
-    [self.hourMarkerLine1 setBackgroundColor:[UIColor clearColor]];
+//    [self.hourMarkerLine1 setBackgroundColor:[UIColor clearColor]];
     [self.view addSubview:self.hourMarkerLine1];
     
     self.hourMarkerLine2 = [[HourMarkerView alloc] initWithFrame:CGRectMake(75.0f, 92.0f, 2.0f, 10.0f)];
-    [self.hourMarkerLine2 setBackgroundColor:[UIColor clearColor]];
+//    [self.hourMarkerLine2 setBackgroundColor:[UIColor clearColor]];
     [self.view addSubview:self.hourMarkerLine2];
 
     // strings are static.  The string should be created in HourIndicator class.

@@ -23,7 +23,8 @@
     CGPoint startOfHorizontalLine = (CGPointMake(1.0f, 0.0f));
     CGPoint endOfHorizontalLine = (CGPointMake(1.0f, 10.0f));
     
-    [[UIColor colorWithRed:40.0f/255.0f green:34.0f/255.0f blue:34.0f/255.0f alpha:1.0f] setStroke];
+    UIColor * lineColour = [UIColor colorWithRed:40.0f/255.0f green:34.0f/255.0f blue:34.0f/255.0f alpha:1.0f];
+    [lineColour setStroke];
     
     UIBezierPath *horizontalLine = [UIBezierPath bezierPath];
     [horizontalLine moveToPoint:startOfHorizontalLine];
